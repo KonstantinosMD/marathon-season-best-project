@@ -56,6 +56,7 @@ saveRDS(gamlss3, file = here("analysis", "model_3_bccg_skewed.rds"))
 gamlss4 <- fitGEV(
   marathon_speed ~ pb(year_centered),
   sigma.formula  = ~ pb(year_centered),
+  n.cyc          = 300,
   data           = train_dat
 )
 saveRDS(gamlss4, file = here("analysis", "model_4_gev_extremes.rds"))
