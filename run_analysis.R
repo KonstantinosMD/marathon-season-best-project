@@ -20,7 +20,10 @@ processed_file <- here::here("data", "01_processed", "marathon_clean.csv")
 if (!file.exists(processed_file)) stop("Data preparation did not create: ", processed_file)
 
 message("Step 2/2: fitting models (this may take some time)")
-source(here::here("R", "03_models.R"), local = new.env(parent = globalenv()))
+source(
+  here::here("R", "03_models.R"),
+  local = FALSE
+)
 
 expected_models <- here::here("analysis", c(
   "model_1_naive_gaussian.rds",
